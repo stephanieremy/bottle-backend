@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class BottleDTO {
 
-    private Long id;
+    private UUID id;
     private String designation;
     private Integer vintage;
     private WineType type;
