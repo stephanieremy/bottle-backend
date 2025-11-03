@@ -4,8 +4,9 @@ import com.bottle.app.domain.bottle.Bottle;
 import com.bottle.app.repository.entity.BottleEntity;
 import org.mapstruct.Mapper;
 
-@Mapper
-public interface BottleMapper {
+@Mapper(componentModel = "spring")
+public interface BottleRepositoryMapper {
+
     Bottle toBottle(BottleEntity bottleEntity);
     BottleEntity toBottleEntity(Bottle bottle);
 }

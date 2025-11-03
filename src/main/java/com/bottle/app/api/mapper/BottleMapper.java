@@ -5,8 +5,9 @@ import com.bottle.app.api.BottleDTO;
 import com.bottle.app.domain.bottle.Bottle;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface BottleMapper {
 
     BottleDTO toBottleDTO(Bottle bottle);
+    Bottle toBottle(BottleDTO bottleDTO);
 }

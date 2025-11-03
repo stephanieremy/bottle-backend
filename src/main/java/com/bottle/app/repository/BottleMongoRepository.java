@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.UUID;
 
-public interface BottleRepository extends MongoRepository<BottleEntity, UUID> {
+public interface BottleMongoRepository extends MongoRepository<BottleEntity, UUID> {
 }
