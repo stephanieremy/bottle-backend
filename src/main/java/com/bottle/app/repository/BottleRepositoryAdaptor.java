@@ -5,6 +5,7 @@ import com.bottle.app.domain.bottle.Bottle;
 import com.bottle.app.repository.mapper.BottleRepositoryMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,6 +29,11 @@ public class BottleRepositoryAdaptor implements BottleRepository {
     @Override
     public void save(Bottle bottle) {
         bottleMongoRepository.save(bottleRepositoryMapper.toBottleEntity(bottle));
+    }
+
+    @Override
+    public List<Bottle> findAll() {
+        return bottleRepositoryMapper.toBottleList(bottleMongoRepository.findAll());
     }
 
 
