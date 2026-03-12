@@ -2,6 +2,7 @@ package com.bottle.app.domain.bottle;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @NoArgsConstructor
@@ -15,5 +16,10 @@ public class Bottle {
     private String designation;
     private Integer vintage;
     private WineType type;
-
+    private LocalDate creationDate;
+    private String region;
+    private Integer quantity;
+    private Double price;
+    private Integer score;
+    private String name;
 }
