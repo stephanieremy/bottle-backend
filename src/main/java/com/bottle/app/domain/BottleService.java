@@ -24,8 +24,8 @@ private final BottleRepository bottleRepository;
         return bottleRepository.findById(id).orElseThrow(()-> new BottleNotFoundException("Bottle not found."));
     }
 
-    public List<Bottle> findAll(){
-        return bottleRepository.findAll();
+    public List<Bottle> findAllBottles(String type){
+        return bottleRepository.findAll(type);
     }
 
     public static class BottleNotFoundException extends RuntimeException {

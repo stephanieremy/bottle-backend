@@ -3,10 +3,7 @@ package com.bottle.app.api.controller;
 import com.bottle.app.api.BottleDTO;
 import com.bottle.app.api.mapper.BottleMapper;
 import com.bottle.app.domain.BottleService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,18 +21,18 @@ public class BottleController {
     }
 
     @PutMapping()
-    public void saveBottle(BottleDTO bottleDTO){
+    public void saveBottle(@RequestBody BottleDTO bottleDTO){
         bottleService.createBottle(bottleMapper.toBottle(bottleDTO));
     }
 
     @GetMapping("{id}")
-    public BottleDTO getBottle(UUID id){
+    public BottleDTO getBottle(@PathVariable UUID id){
       return  bottleMapper.toBottleDTO(bottleService.findById(id));
     }
 
     @GetMapping()
-    public List<BottleDTO> getAllBottles(){
-        return bottleMapper.toBottleDTOList(bottleService.findAll());
+    public List<BottleDTO> getAllBottles(@RequestParam(required = false) String type){
+        return bottleMapper.toBottleDTOList(bottleService.findAllBottles(type));
     }
 
 

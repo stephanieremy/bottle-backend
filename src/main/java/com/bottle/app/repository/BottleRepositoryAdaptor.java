@@ -32,8 +32,8 @@ public class BottleRepositoryAdaptor implements BottleRepository {
     }
 
     @Override
-    public List<Bottle> findAll() {
-        return bottleRepositoryMapper.toBottleList(bottleMongoRepository.findAll());
+    public List<Bottle> findAll(String type) {
+        return bottleRepositoryMapper.toBottleList(bottleMongoRepository.findAllByType(type));
     }
 
 

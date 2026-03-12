@@ -10,5 +10,5 @@ public interface BottleRepository {
 
     Optional<Bottle> findById(UUID id);
     void save(Bottle bottle);
-    List<Bottle> findAll();
+    List<Bottle> findAll(String type);
 }
