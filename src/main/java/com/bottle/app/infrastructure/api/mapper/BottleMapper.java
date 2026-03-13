@@ -1,7 +1,7 @@
-package com.bottle.app.api.mapper;
+package com.bottle.app.infrastructure.api.mapper;
 
 
-import com.bottle.app.api.BottleDTO;
+import com.bottle.app.infrastructure.api.BottleDTO;
 import com.bottle.app.domain.bottle.Bottle;
 import org.mapstruct.Mapper;
 

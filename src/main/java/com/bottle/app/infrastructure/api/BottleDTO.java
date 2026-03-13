@@ -1,4 +1,4 @@
-package com.bottle.app.api;
+package com.bottle.app.infrastructure.api;
 
 import com.bottle.app.domain.bottle.WineType;
 

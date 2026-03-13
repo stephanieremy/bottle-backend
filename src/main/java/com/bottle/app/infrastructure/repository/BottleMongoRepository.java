@@ -1,6 +1,7 @@
-package com.bottle.app.repository;
+package com.bottle.app.infrastructure.repository;
 
-import com.bottle.app.repository.entity.BottleEntity;
+import com.bottle.app.domain.bottle.WineType;
+import com.bottle.app.infrastructure.repository.entity.BottleEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
@@ -10,6 +11,6 @@ import java.util.UUID;
 public interface BottleMongoRepository extends MongoRepository<BottleEntity, UUID> {
 
     @Query("{ $or: [ { $expr: { $eq: [ '?0', 'null' ] } }, { type: ?0 } ] }")
-    List<BottleEntity> findAllByType(String type);
+    List<BottleEntity> findAllByType(WineType type);
 }
 
