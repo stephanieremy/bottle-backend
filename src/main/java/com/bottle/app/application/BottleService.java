@@ -21,6 +21,7 @@ private final BottleRepository bottleRepository;
     }
 
     public Bottle createBottle(Bottle bottle){
+        bottle.setId(UUID.randomUUID());
         return bottleRepository.save(bottle);
     }
 
